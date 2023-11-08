@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
+
+            $table->string('cover_image')->nullable();
+            $table->string('title'); //Learn Laravel
+            $table->string('slug'); //https://mysite.com/posts/learn-laravel
+            $table->text('content')->nullable();
+
             $table->timestamps();
         });
     }
