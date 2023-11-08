@@ -2,7 +2,6 @@
 
 @section('content')
     <div class="container">
-        <h1>ADMIN/PROJECTS/INDEX.BLADE</h1>
         <h2 class="fs-4 text-secondary my-4">
             {{ __('Project List for') }} {{ Auth::user()->name }}
         </h2>
@@ -28,7 +27,9 @@
                     @forelse ($projects as $project)
                         <tr class="">
                             <td class="align-middle" scope="row">{{ $project->id }}</td>
-                            <td class="text-center align-middle">{{ $project->thumb }}</td>
+                            <td class="text-center align-middle">
+                                <img width="100" src="{{ $project->thumb }}" alt="">    
+                            </td>
                             <td class="align-middle">{{ $project->title }}</td>
                             <td class="align-middle">{{ $project->description }}</td>
                             <td class="align-middle">{{ $project->tech }}</td>

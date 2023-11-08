@@ -17,13 +17,17 @@ class ProjectSeeder extends Seeder
     {
 
         for ($i = 0; $i < 10; $i++) {
-            $post = new Project();
+            $project = new Project();
 
-            $post->title = $faker->realText(50);
-            $post->slug = Str::slug($post->title, '-');
-            $post->content = $faker->realText();
+            $project->title = $faker->realText(50);
+            $project->slug = Str::slug($project->title, '-');
+            // $project->thumb = 'thumbs/' . $faker->image('public/storage/thumbs', category: 'Projects', fullPath: 'false');
+            $project->thumb = $faker->imageUrl(category: 'Projects');
+            // dd($project->thumb);
+            $project->description = $faker->realText();
+            $project->tech = $faker->company();
 
-            $post->save();
+            $project->save();
         }
     }
 }
