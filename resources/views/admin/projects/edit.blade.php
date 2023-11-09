@@ -20,16 +20,18 @@
                     </div>
                 @endif
 
-                <form action="{{ route('admin.projects.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('admin.projects.update', $project) }}" method="POST" enctype="multipart/form-data">
 
                     @csrf
+
+                    @method('put')
 
                     <div class="mb-3">
 
                         <label for="title" class="form-label"><strong>Title</strong></label>
 
                         <input type="text" class="form-control" name="title" id="title"
-                            aria-describedby="helpTitle" placeholder="New project Title" required value="{{  old('title') }}">
+                            aria-describedby="helpTitle" placeholder="New project Title" value="{{ old('title') ? old('title') : $project->title }}" required value="{{  old('title') }}">
 
                         @error('title')
                             <div class="text-danger">{{ $message }}</div>

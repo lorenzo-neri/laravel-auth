@@ -43,7 +43,7 @@
                                 <a class="btn btn-secondary" href="{{ route('admin.projects.show', $project->slug) }}">show</a>
                             </td>
                             <td class="align-middle">
-                                <a class="btn btn-secondary" href="{{ route('admin.projects.edit', $project->id) }}">edit</a>
+                                <a class="btn btn-secondary" href="{{ route('admin.projects.edit', $project->slug) }}">edit</a>
                             </td>
                         </tr>
                     @empty
