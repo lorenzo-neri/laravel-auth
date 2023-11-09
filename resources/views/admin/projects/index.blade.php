@@ -35,6 +35,7 @@
                             <td class="align-middle">{{ $project->title }}</td>
                             <td class="align-middle">{{ $project->description }}</td>
                             <td class="align-middle">{{ $project->tech }}</td>
+                            <td><a class="btn btn-secondary" href="{{ route('admin.projects.show', $project->id) }}">show</a></td>
                         </tr>
                     @empty
                         <td class="align-middle">No Projects to show</td>

@@ -35,7 +35,7 @@ class ProjectController extends Controller
     public function store(StoreProjectRequest $request)
     {
 
-        dd($request->validated());
+        // dd($request->validated());
         $valData = $request->validated();
 
         $valData['slug'] = Str::slug($request->title, '-');
@@ -55,7 +55,7 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        //
+        return view('admin.projects.show', compact('project'));
     }
 
     /**
