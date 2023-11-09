@@ -43,7 +43,39 @@
                                 <a class="btn btn-secondary" href="{{ route('admin.projects.show', $project->slug) }}">show</a>
                             </td>
                             <td class="align-middle">
-                                <a class="btn btn-secondary" href="{{ route('admin.projects.edit', $project->slug) }}">edit</a>
+                                <a class="btn btn-warning" href="{{ route('admin.projects.edit', $project->slug) }}">edit</a>
+                            </td>
+                            <td class="align-middle">
+                                {{-- <a class="btn btn-danger" href="{{ route('admin.projects.destroy', $project) }}">Delete</a> --}}
+
+
+                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalId-{{$project->id}}">
+                                    Delete
+                                </button>
+                                
+                                <div class="modal fade" id="modalId-{{$project->id}}" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="modalId-{{$project->id}}" aria-hidden="true">
+                                  <div class="modal-dialog">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h5 class="modal-title" id="modalTitleId-{{$project->id}}">Modal title id: {{$project->id}}</h5>
+                                      </div>
+                                      <div class="modal-body">
+                                        Attenzione! Sicuro di voler eliminare?
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal">
+                                            annulla &times;
+                                        </button>
+                                        {{-- non confondere destroy con delete --}}
+                                        <form action="{{route ('admin.projects.destroy', $project->slug)}}" method="POST">
+                                            @csrf
+                                            @method('delete')
+                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                        </form>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
                             </td>
                         </tr>
                     @empty
