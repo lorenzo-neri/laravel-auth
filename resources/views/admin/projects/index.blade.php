@@ -6,6 +6,8 @@
             {{ __('Project List for') }} {{ Auth::user()->name }}
         </h2>
 
+        <a class="btn btn-primary mb-4" href="{{ route('admin.projects.create') }}">Add Project</a>
+
         @if (session('status'))
             <div class="alert alert-success" role="alert">
                 {{ session('status') }}

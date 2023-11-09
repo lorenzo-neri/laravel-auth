@@ -3,12 +3,12 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-
-
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
+#use App\Models\User;
 use App\Models\Project;
-use App\Models\User;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class ProjectController extends Controller
 {
@@ -26,7 +26,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.projects.create');
     }
 
     /**
@@ -34,7 +34,20 @@ class ProjectController extends Controller
      */
     public function store(StoreProjectRequest $request)
     {
-        //
+
+        dd($request->validated());
+        $valData = $request->validated();
+
+        $valData['slug'] = Str::slug($request->title, '-');
+
+        if ($request->has('thumb')) {
+            $file_path = Storage::put('thumbs', $request->thumb);
+            $valData['thumb'] = $file_path;
+        }
+
+        $newProject = Project::create($valData);
+
+        return to_route('admin.projects.index')->with('status', 'Well Done, New Entry Added Succeffully');
     }
 
     /**

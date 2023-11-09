@@ -2,6 +2,9 @@
 
 @section('content')
 <div class="container">
+
+    <h1 class="text-danger">TEST</h1>
+
     <h2 class="fs-4 text-secondary my-4">
         {{ __('Dashboard') }}
     </h2>

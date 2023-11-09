@@ -31,7 +31,7 @@ Route::middleware(['auth', 'verified']) #per utenti loggati e verificati
 
         //All routes will start with '/admin/...'
         //route('admin.dashboard')
-        Route::resource('projects', ProjectController::class);
+        Route::resource('projects', ProjectController::class)/* ->parameters(['projects' => 'project:slug'] )*/;
     });
 
 
