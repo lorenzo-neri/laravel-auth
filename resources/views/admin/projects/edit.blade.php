@@ -2,9 +2,9 @@
 
 @section('content')
     <div class="container">
-        <h1>ADMIN/PROJECTS/CREATE</h1>
+        <h1>ADMIN/PROJECTS/EDIT</h1>
         <h2 class="fs-4 text-secondary my-4">
-            {{ __('New Project Page for') }} {{ Auth::user()->name }}.
+            {{ __('Edit Project Page for') }} {{ Auth::user()->name }}.
         </h2>
 
         <div class="row justify-content-center my-3">

@@ -30,12 +30,21 @@
                         <tr class="">
                             <td class="align-middle" scope="row">{{ $project->id }}</td>
                             <td class="text-center align-middle">
-                                <img width="100" src="{{ $project->thumb }}" alt="">    
+                                @if (str_contains($project->thumb, 'http'))
+                                    <img width="100" src="{{ $project->thumb }}" alt="{{ $project->title }}">
+                                @else
+                                    <img width="100" src="{{ asset('storage/' . $project->thumb) }}">
+                                @endif
                             </td>
                             <td class="align-middle">{{ $project->title }}</td>
                             <td class="align-middle">{{ $project->description }}</td>
                             <td class="align-middle">{{ $project->tech }}</td>
-                            <td><a class="btn btn-secondary" href="{{ route('admin.projects.show', $project->id) }}">show</a></td>
+                            <td class="align-middle">
+                                <a class="btn btn-secondary" href="{{ route('admin.projects.show', $project->slug) }}">show</a>
+                            </td>
+                            <td class="align-middle">
+                                <a class="btn btn-secondary" href="{{ route('admin.projects.edit', $project->id) }}">edit</a>
+                            </td>
                         </tr>
                     @empty
                         <td class="align-middle">No Projects to show</td>
