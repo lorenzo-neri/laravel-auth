@@ -49,7 +49,7 @@ class ProjectController extends Controller
 
         $newProject = Project::create($valData);
 
-        return to_route('admin.projects.index')->with('status', 'Progetto aggiunto con successo✅');
+        return to_route('admin.projects.index')->with('status', 'Progetto aggiunto con successo ✅');
     }
 
     /**
@@ -96,7 +96,7 @@ class ProjectController extends Controller
         // dd($valData);
         // AGGIORNA L'ENTITA' CON I VALORI DI $valData
         $project->update($valData);
-        return to_route('admin.projects.index')->with('status', 'Progetto modificato con successo🥳');
+        return to_route('admin.projects.index')->with('status', 'Progetto modificato con successo 🥳');
     }
 
     /**
@@ -108,6 +108,6 @@ class ProjectController extends Controller
             Storage::delete($project->thumb);
         }
         $project->delete();
-        return to_route('admin.projects.index')->with('status', 'Progetto eliminato correttamente🚮');
+        return to_route('admin.projects.index')->with('status', 'Progetto eliminato correttamente 🚮');
     }
 }
