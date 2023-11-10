@@ -78,8 +78,11 @@
                             </div>
                         </div>
 
-                        <a class="w-100 btn btn-dark" href="{{ $project->github }}">
+                        <a class="w-100 btn btn-dark" href="{{ $project->link_github }}">
                             <i class="fa-brands fa-github fa-xl"></i>
+                        </a>
+                        <a class="w-100 btn btn-secondary" href="{{ $project->link_project_online }}">
+                            <i class="fa-solid fa-link fa-xl"></i>
                         </a>
                     </div>
                 </div>

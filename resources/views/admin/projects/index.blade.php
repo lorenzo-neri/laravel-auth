@@ -49,12 +49,14 @@
 
                             <td class="align-middle">{{ $project->title }}</td>
 
+                            {{-- LINK GITHUB --}}
                             <td class="align-middle text-center">
                                 <a class="text-dark" href="{{ $project->link_github }}"><i
                                         class="fa-brands fa-github fa-2xl"></i></a>
                             </td>
+                            {{-- LINK WEB --}}
                             <td class="align-middle text-center">
-                                <a class="text-dark" href="{{ $project->link_github }}"><i
+                                <a class="text-dark" href="{{ $project->link_project_online }}"><i
                                         class="fa-solid fa-link fa-2xl"></i></a>
                             </td>
 

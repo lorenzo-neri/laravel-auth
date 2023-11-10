@@ -30,7 +30,9 @@
                         <label for="title" class="form-label"><strong>Title</strong></label>
 
                         <input type="text" class="form-control" name="title" id="title"
-                            aria-describedby="helpTitle" placeholder="New project Title" value="{{ old('title') ? old('title') : $project->title }}" required value="{{  old('title') }}">
+                            aria-describedby="helpTitle" placeholder="New project Title"
+                            value="{{ old('title') ? old('title') : $project->title }}" required
+                            value="{{ old('title') }}">
 
                         @error('title')
                             <div class="text-danger">{{ $message }}</div>
@@ -75,9 +77,37 @@
                         @enderror
 
                     </div>
+                    <div class="mb-3">
+
+                        <label for="github_link" class="form-label"><strong>Link GitHub</strong></label>
+
+                        <input type="url" class="form-control" name="github_link" id="github_link"
+                            aria-describedby="helpGithubLink" placeholder="GitHub link to the New Project" required
+                            value="{{ old('github_link') }}">
+
+                        @error('github_link')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label for="web_link" class="form-label"><strong>Link WEB</strong></label>
+
+                        <input type="url" class="form-control" name="web_link" id="web_link"
+                            aria-describedby="helpWebLink" placeholder="Web link to the New Project" required
+                            value="{{ old('web_link') }}">
+
+                        @error('web_link')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
+
+                    </div>
 
                     <button type="submit" class="btn btn-success my-3">SAVE</button>
                     <a class="btn btn-primary" href="{{ route('admin.projects.index') }}">CANCEL</a>
+
 
                 </form>
             </div>

@@ -32,7 +32,8 @@
                         <label for="title" class="form-label"><strong>Title</strong></label>
 
                         <input type="text" class="form-control" name="title" id="title"
-                            aria-describedby="helpTitle" placeholder="New project Title" required value="{{  old('title') }}">
+                            aria-describedby="helpTitle" placeholder="New project Title" required
+                            value="{{ old('title') }}">
 
                         @error('title')
                             <div class="text-danger">{{ $message }}</div>
@@ -45,7 +46,8 @@
                         <label for="description" class="form-label"><strong>Description</strong></label>
 
                         <input type="text" class="form-control" name="description" id="description"
-                            aria-describedby="helpTitle" placeholder="New project Description">
+                            aria-describedby="helpDescription" placeholder="New project Description" required
+                            value="{{ old('description') }}">
 
                         @error('description')
                             <div class="text-danger">{{ $message }}</div>
@@ -57,8 +59,8 @@
 
                         <label for="tech" class="form-label"><strong>Technologies Used</strong></label>
 
-                        <input type="text" class="form-control" name="tech" id="tech"
-                            aria-describedby="helpTitle" placeholder="Tech used creating the New Project">
+                        <input type="text" class="form-control" name="tech" id="tech" aria-describedby="helpTech"
+                            placeholder="Tech used creating the New Project">
 
                         @error('tech')
                             <div class="text-danger">{{ $message }}</div>
@@ -73,6 +75,34 @@
                             placeholder="Upload a new image file..." aria-describedby="fileHelpThumb">
 
                         @error('thumb')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label for="github_link" class="form-label"><strong>Link GitHub</strong></label>
+
+                        <input type="url" class="form-control" name="github_link" id="github_link"
+                            aria-describedby="helpGithubLink" placeholder="GitHub link to the New Project" required
+                            value="{{ old('github_link') }}">
+
+                        @error('github_link')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label for="web_link" class="form-label"><strong>Link WEB</strong></label>
+
+                        <input type="url" class="form-control" name="web_link" id="web_link"
+                            aria-describedby="helpWebLink" placeholder="Web link to the New Project" required
+                            value="{{ old('web_link') }}">
+
+                        @error('web_link')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
 
