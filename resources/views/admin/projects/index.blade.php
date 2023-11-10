@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="container">
+    <div class="container-fluid">
         <h2 class="text-uppercase text-dark my-4">
             {{ __('Projects') }} {{-- sintassi x traduzione --}}
         </h2>
