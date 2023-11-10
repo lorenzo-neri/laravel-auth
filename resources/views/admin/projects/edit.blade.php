@@ -2,9 +2,8 @@
 
 @section('content')
     <div class="container">
-        <h1>ADMIN/PROJECTS/EDIT</h1>
         <h2 class="fs-4 text-secondary my-4">
-            {{ __('Edit Project Page for') }} {{ Auth::user()->name }}.
+            {{ __('Edit Project') }} {{ Auth::user()->name }}
         </h2>
 
         <div class="row justify-content-center my-3">

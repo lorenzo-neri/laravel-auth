@@ -20,6 +20,9 @@
                     </div>
                 @endif
 
+
+                {{-- TODO method old in form create and update --}}
+
                 <form action="{{ route('admin.projects.store') }}" method="POST" enctype="multipart/form-data">
 
                     @csrf
